@@ -1,8 +1,8 @@
 # digital-signature-usign-rsa
 Implementation of digital signature using RSA
 
-Reuirement
-----------
+Requirements
+------------
 1. Crypto - https://pypi.python.org/pypi/pycrypto
 2. gmpy2 - https://pypi.python.org/pypi/gmpy2
 
