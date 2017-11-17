@@ -1,5 +1,5 @@
 # Author - Santosh Panna
-# Version - 0.0.1
+# Version - 0.0.2
 # Descriptopn - Implementation of Digital Signature using RSA
 
 import Crypto.Util.number as CryNum
@@ -87,6 +87,10 @@ def encrypt():
 
 	#encypting the digest using RSA algorithm CT = M^d mod n
 	encDigest = pow(int(m),d,n)
+
+	'''
+	print("p = "+str(p)+"\nq = "+str(q)+"\nN = "+str(n)+"\nO(n) = "+str(phin)+"\ne = "+str(e)+"\nd = "+str(d)+"\nDigest = "+str(digest)+"\nEncrypted Digest = "+str(encDigest))
+	'''
 	
 	#writing message+digest to a file
 	with open('transfer.txt', 'w') as file:
@@ -149,11 +153,15 @@ def decrypt():
 	for i in msg:
 		m = m+str(ord(i))
 
+	'''
+	print("Recieved Digest = "+str(digest)+"\nRecieved Message = "+str(msg)+"\ne = "+str(e)+"\nn = "+str(n)+"\nCaculated hash = "+str(m))
+	'''
+	
 	#if decypted digest == calculated hash then the sender is verified else message has been tampered with
 	if m == o:
 		print("Sender Verified.")
 	else:
-		print("Message has been tampered.")
+		print("Not able to verify the sender and/or message has been tampered.")
 
 
 if __name__ == '__main__':
