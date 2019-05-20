@@ -1,4 +1,4 @@
-# digital-signature-usign-rsa
+# digital-signature-using-rsa
 Implementation of digital signature using RSA
 
 Requirements
